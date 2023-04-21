@@ -74,14 +74,13 @@
         </div>
       </nav>
     </header>
-    <main class="container">
+    <main class="container ">
       <h1 class="display-4 text-center mt-4">Administrador de Peliculas</h1>
       <hr />
       <p>Opciones: <button
         type="button"
         class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        id="btnAgregar"
       >
         <i class="bi bi-clipboard-plus"></i>
       </button></p>
@@ -113,7 +112,7 @@
               </td>
               <td>Aventura</td>
               <td>
-                <button class="bi bi-pencil-square btn btn-warning"></button
+                <button class="bi bi-pencil-square btn btn-warning"  id="btnEditar"></button
                 ><button class="bi bi-x-square btn btn-danger"></button>
               </td>
             </tr>
@@ -160,10 +159,10 @@
         <!-- Modal -->
         <div
           class="modal fade"
-          id="exampleModal"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
+          id="modalAgregar"
         >
           <div class="modal-dialog">
             <div class="modal-content">
@@ -179,14 +178,14 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <form>
+                <form id="formAdministrarPelicula">
                   <div class="mb-3">
                     <label for="inputCodigo" class="form-label">Codigo</label>
-                    <input type="number" class="form-control" id="inputCodigo" placeholder="Ej: 123"> 
+                    <input type="number" class="form-control" id="inputCodigo" placeholder="Ej: 123" required min="3" max="15"> 
                   </div>
                   <div class="mb-3">
                     <label for="inputTitulo" class="form-label">Titulo</label>
-                    <input type="number" class="form-control" id="inputTitulo"  placeholder="Ej: Robotech"> 
+                    <input type="text" class="form-control" id="inputTitulo"  placeholder="Ej: Robotech" required minlength="3" maxlength="100"> 
                   </div>
                   <div class="mb-3">
                     <label for="inputDescripcion" class="form-label">Descripcion</label>
@@ -194,7 +193,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="inputImagen" class="form-label">Imagen</label>
-                    <input type="number" class="form-control" id="inputImagen"  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"> 
+                    <input type="text" class="form-control" id="inputImagen"  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html" required > 
                   </div>
                   <div class="mb-3">
                     <label for="inputGenero" class="form-label">Genero</label>
@@ -209,22 +208,22 @@
                   </div>
                   <div class="mb-3">
                     <label for="inputAnio" class="form-label">Año</label>
-                    <input type="number" class="form-control" id="inputAnio"  placeholder="Ej: 2023"> 
+                    <input type="number" class="form-control" id="inputAnio"  placeholder="Ej: 2023" required min="3" max="4"> 
                   </div>
                   <div class="mb-3">
                     <label for="inputPais" class="form-label">Pais</label>
-                    <input type="number" class="form-control" id="inputPais"  placeholder="Ej: Argentina"> 
+                    <input type="text" class="form-control" id="inputPais"  placeholder="Ej: Argentina" required minlength="3" maxlength="20"> 
                   </div>
                   <div class="mb-3">
                     <label for="inputDuracion" class="form-label">Duracion</label>
-                    <input type="number" class="form-control" id="inputDuracion"  placeholder="Ej: 93 min"> 
+                    <input type="number" class="form-control" id="inputDuracion"  placeholder="Ej: 93 min" required min="1" max="999"> 
                   </div>
                   <div class="mb-3">
                     <label for="inputReparto" class="form-label">Reparto <span class="text-muted text-sm">(Cada Actor por separado por una ,)</span></label>
-                    <input type="number" class="form-control" id="inputReparto"  placeholder="Ej: Chris Pratt, Anya Taylor-Joy"> 
+                    <input type="text" class="form-control" id="inputReparto"  placeholder="Ej: Chris Pratt, Anya Taylor-Joy" required minlength="3" maxlength="200"> 
                   </div>
                   <div class="justify-content-start">
-                    <button type="button" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary">
                       Enviar
                     </button>
                   </div>
@@ -241,7 +240,7 @@
         </div>
       </section>
     </main>
-    <footer class="bg-dark text-light text-center py-4">
+    <footer class="bg-dark text-light text-center pt-4 pb-4 m-0">
       <p>&copy; Todos los derechos Reservados</p>
     </footer>
     <script
