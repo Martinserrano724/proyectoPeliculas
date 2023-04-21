@@ -1,0 +1,10 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /*Nos permite mantener el orden y tener todos los contenidos flexibles*/
+}
+main{
+    /*flex grow: 1 nos permite determinar q el hijo del medio nada mas cresca*/
+    flex-grow: 1;
+}
