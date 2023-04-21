@@ -8,3 +8,6 @@ main{
     /*flex grow: 1 nos permite determinar q el hijo del medio nada mas cresca*/
     flex-grow: 1;
 }
+table{
+    table-layout: fixed;
+}
