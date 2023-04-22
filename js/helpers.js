@@ -1,19 +1,19 @@
 function cantidadCaracteres(texto,min,max){
-    console.log("validando Caracteres");
+ //   console.log("validando Caracteres");
     if(texto.length >= min && texto.length <=max ){
-        console.log("cantidad caracteres correcto");
+    //    console.log("cantidad caracteres correcto");
         return true;
     }
     else{
-        console.log("cantidad caracteres incorrecto");
+    //    console.log("cantidad caracteres incorrecto");
         return false;
     }
 }
 function validandoDuracion(value){
-    console.log("validando Duracion");
+   // console.log("validando Duracion");
     let patron= /^[0-9]{1,3}$/;
     if(patron.test(value)){
-        console.log("digito valido de 1 a 3 caracteres");
+    //    console.log("digito valido de 1 a 3 caracteres");
         return true;
     }
     else{
@@ -22,39 +22,39 @@ function validandoDuracion(value){
     }
 }
 function validandoAnio(value){
-    console.log("validando Año");
+   // console.log("validando Año");
     const anioActual = new Date().getFullYear()+1;
 
     if(value >= 1985 && value <= anioActual){
-        console.log("año valido ");
+      //  console.log("año valido ");
         return true;
     }
     else{
-        console.log("año incorrecto");
+       // console.log("año incorrecto");
         return false;
     }
    
 }
 function validandoImgUrl(value){
-    console.log("validando Imagen");
+    //console.log("validando Imagen");
     let patron= /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|WebP)$/;
     if(patron.test(value)){
-        console.log("imagen valida");
+       // console.log("imagen valida");
         return true;
     }
     else{
-        console.log("imagen invalida debe ser tipo png o gif o jpg");
+       // console.log("imagen invalida debe ser tipo png o gif o jpg");
         return false;
     }
 }
 function validandoGenero(genero){
-    console.log("validando Genero");
+    //console.log("validando Genero");
        if(genero.length>0 && (genero==='Aventura'||genero==='Accion'||genero==='Drama'||genero==='Terror')){
-        console.log("genero valida");
+       // console.log("genero valida");
         return true;
     }
     else{
-        console.log("genero invalido");
+      //  console.log("genero invalido");
         return false;
     }
 }
