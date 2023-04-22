@@ -18,6 +18,6 @@ function canbiarTema(color){
     //para guardar datos en localStorage se usa setItem
     localStorage.setItem('tema',color);
    //
-   localStorage.setItem('tema0',JSON.stringify(color));//transforma cualquier valor en string y permite guardarlos en el local storage
+  // localStorage.setItem('tema0',JSON.stringify(color));//transforma cualquier valor en string y permite guardarlos en el local storage
 
 }

@@ -180,8 +180,8 @@
               <div class="modal-body">
                 <form id="formAdministrarPelicula">
                   <div class="mb-3">
-                    <label for="inputCodigo" class="form-label">Codigo</label>
-                    <input type="number" class="form-control" id="inputCodigo" placeholder="Ej: 123" required min="3" max="15"> 
+                    <label for="inputCodigo" class="form-label ">Codigo</label>
+                    <input type="number" class="form-control" id="inputCodigo" placeholder="" disabled> 
                   </div>
                   <div class="mb-3">
                     <label for="inputTitulo" class="form-label">Titulo</label>
@@ -196,36 +196,39 @@
                     <input type="text" class="form-control" id="inputImagen"  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html" required > 
                   </div>
                   <div class="mb-3">
-                    <label for="inputGenero" class="form-label">Genero</label>
-                    <select class="form-select" aria-label="Elegir Genero" id="inputGenero">
-                      <option selected>Selecione una Opcion</option>
-                      <option value="1">Aventura</option>
-                      <option value="2">Accion</option>
-                      <option value="3">Drama</option>
-                      <option value="4">Terror</option>
+                    <label for="inputGenero" class="form-label" >Genero</label>
+                    <select class="form-select" aria-label="Elegir Genero" id="inputGenero" required>
+                      <option selected value="">Selecione una Opcion</option>
+                      <option value="Aventura">Aventura</option>
+                      <option value="Accion">Accion</option>
+                      <option value="Drama">Drama</option>
+                      <option value="Terror">Terror</option>
 
                     </select>     
                   </div>
                   <div class="mb-3">
                     <label for="inputAnio" class="form-label">Año</label>
-                    <input type="number" class="form-control" id="inputAnio"  placeholder="Ej: 2023" required min="3" max="4"> 
+                    <input type="number" class="form-control" id="inputAnio"  placeholder="Ej: 2023"  min="1985" > 
                   </div>
                   <div class="mb-3">
                     <label for="inputPais" class="form-label">Pais</label>
-                    <input type="text" class="form-control" id="inputPais"  placeholder="Ej: Argentina" required minlength="3" maxlength="20"> 
+                    <input type="text" class="form-control" id="inputPais"  placeholder="Ej: Argentina"  minlength="3" maxlength="20"> 
                   </div>
                   <div class="mb-3">
                     <label for="inputDuracion" class="form-label">Duracion</label>
-                    <input type="number" class="form-control" id="inputDuracion"  placeholder="Ej: 93 min" required min="1" max="999"> 
+                    <input type="number" class="form-control" id="inputDuracion"  placeholder="Ej: 93 min"  min="1" max="999" > 
                   </div>
                   <div class="mb-3">
                     <label for="inputReparto" class="form-label">Reparto <span class="text-muted text-sm">(Cada Actor por separado por una ,)</span></label>
-                    <input type="text" class="form-control" id="inputReparto"  placeholder="Ej: Chris Pratt, Anya Taylor-Joy" required minlength="3" maxlength="200"> 
+                    <input type="text" class="form-control" id="inputReparto"  placeholder="Ej: Chris Pratt, Anya Taylor-Joy"  minlength="3" maxlength="200"> 
                   </div>
                   <div class="justify-content-start">
                     <button type="submit" class="btn btn-primary">
                       Enviar
                     </button>
+                  </div>
+                  <div class="alert alert-danger mt-3 d-none" role="alert" id="msjFormulario">
+                   
                   </div>
                   
                  
@@ -248,6 +251,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
     <script src="../js/app.js"></script>
     <script type="module" src="../js/administrador.js"></script>
   </body>
