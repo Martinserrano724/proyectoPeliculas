@@ -63,7 +63,7 @@ export function sumarValidaciones(titulo,descripcion,img,duracion,anio,pais,repa
     if(!cantidadCaracteres(titulo,3,100)){
         resume +='Corregir el campo del titulo que debe contener entre 3 y 100 carateres <br>'
     }
-    if(!cantidadCaracteres(descripcion,10,200)){
+    if(!cantidadCaracteres(descripcion,10,400)){
         resume +='Corregir el campo de descripcion <br>'
     }
     if(!validandoImgUrl(img)){

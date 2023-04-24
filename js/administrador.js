@@ -65,25 +65,42 @@ function dibujarFilas(peli,contador){
   //aqui se dubuja la tabla
  datosTabla.innerHTML+=` 
  <tr>
- <th scope="row">${contador+1}</th>
+ <th>${contador+1}</th>
  <td>${peli.titulo}</td>
- <td class="text-truncate">
-   ${peli.descripcion}
- </td>
- <td class="text-truncate">
-  ${peli.imagen}
- </td>
- <td> ${peli.genero}</td>
- <td>
-   <button class="bi bi-pencil-square btn btn-warning m-2"  id="btnEditar"></button>
-   <button class="bi bi-x-square btn btn-danger m-2"></button>
+ <td class="text-truncate"> ${peli.descripcion} </td>
+ <td class="text-truncate"> ${peli.imagen}</td>
+ <td> ${peli.genero}</td><td>
+   <button class="bi bi-pencil-square btn btn-warning "  id="btnEditar"></button>
+   <button class="bi bi-x-square btn btn-danger "></button>
  </td>
 </tr>`
 }
-function crearPeli() {}
+//-------------------------------------------------------------------
+const inputContador = document.getElementById('inputDescripcion');
+const contadorDescripcion = document.getElementById('contadorCaracteres');
+
+inputContador.addEventListener('input', cargaCaracteresTextArea);
+
+function cargaCaracteresTextArea() {
+  let resta=400-inputContador.value.length
+  if(resta >= 0)
+  contadorDescripcion.innerHTML =resta;
+  
+}
+/*txtDescripcion.className=`onkeyup="mostrarTextDescripcion()"`
+
+function mostrarTextDescripcion(){
+  console.log()
+}*/
+//-------------------------------------------------------------------
+
+
+
+
 function mostrarModalPelicula() {
   //modalPelicula nos sirve para crear un intancia de un modal desde JS
   modalPelicula.show();
+  msjFormulario.className = "alert alert-danger mt-3 d-none";
 }
 function cargarPelicula(e) {
   //nos sirve para para poder usar un formulario
@@ -122,9 +139,17 @@ function cargarPelicula(e) {
     //cargamos la ultima fila en la tabla
     let contadorPeliculas = listaPeliculas.length-1;
     dibujarFilas(nuevaPeli,contadorPeliculas);
+
+    Swal.fire(
+      'Pelicula Creada',
+      `la Pelicula ${nuevaPeli.titulo} fue creada correctamente`,
+      'success'
+    )
+  
   } else {
     msjFormulario.className = "alert alert-danger mt-3 ";
     msjFormulario.innerHTML = sumario;
+ 
   }
 }
 function guardarLocalStorage() {
