@@ -24,74 +24,74 @@
     }
 
 // getter y setter para el atributo codigo
-getCodigo(){
+get codigo(){
     return this.#codigo;
   }
-setCodigo(codigo) {
+set codigo(codigo) {
     this.#codigo = codigo;
   }
 
   // getter y setter para el atributo titulo
-  getTitulo() {
+  get titulo() {
     return this.#titulo;
   }
-  setTitulo(titulo) {
+  set titulo(titulo) {
     this.#titulo = titulo;
   }
 
   // getter y setter para el atributo descripcion
-  getDescripcion() {
+  get descripcion() {
     return this.#descripcion;
   }
-  setDescripcion(descripcion) {
+  set descripcion(descripcion) {
     this.#descripcion = descripcion;
   }
 
   // getter y setter para el atributo imagen
-  getImagen() {
+  get imagen() {
     return this.#imagen;
   }
-  setImagen(imagen) {
+  set imagen(imagen) {
     this.#imagen = imagen;
   }
 
   // getter y setter para el atributo genero
-  getGenero() {
+  get genero() {
     return this.#genero;
   }
-  setGenero(genero) {
+  set genero(genero) {
     this.#genero = genero;
   }
 
   // getter y setter para el atributo anio
-  getAnio() {
+  get anio() {
     return this.#anio;
   }
-  setAnio(anio) {
+  set anio(anio) {
     this.#anio = anio;
   }
 
   // getter y setter para el atributo duracion
-  getDuracion() {
+  get duracion() {
     return this.#duracion;
   }
-  setDuracion(duracion) {
+  set duracion(duracion) {
     this.#duracion = duracion;
   }
 
   // getter y setter para el atributo pais
-  getPais() {
+  get pais() {
     return this.#pais;
   }
-  setPais(pais) {
+  set pais(pais) {
     this.#pais = pais;
   }
 
   // getter y setter para el atributo reparto
-  getReparto() {
+  get reparto() {
     return this.#reparto;
   }
-  setReparto(reparto) {
+  set reparto(reparto) {
     this.#reparto = reparto;
   }
 

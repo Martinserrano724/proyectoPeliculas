@@ -22,7 +22,12 @@ const msjFormulario = document.getElementById("msjFormulario");
 //trabajar las peliculas para que vuelvan a ser un objeto Pelicula.
 let listaPeliculas = JSON.parse(localStorage.getItem('listaPeliculas'))|| [];
 
+//manejador de eventos
+//btnEditar.addEventListener("click", crearPeli);
+btnAgregar.addEventListener("click", mostrarModalPelicula);
+formPelicula.addEventListener("submit", cargarPelicula);
 
+//desde la linea 30 ala 42 transformamos el objeto que esta almacenado en el localStorage a tipo pelicula ya que al guardarse pierde las propiedas de la clase Pelicula
 for (let index = 0; index < listaPeliculas.length; index++) {
   
 }
@@ -37,16 +42,44 @@ if (listaPeliculas) {
 }
 
 console.log(listaPeliculas);
-
-btnEditar.addEventListener("click", crearPeli);
-btnAgregar.addEventListener("click", mostrarModalPelicula);
-formPelicula.addEventListener("submit", cargarPelicula);
+cargaInicial();
 
 //instanciamos un objeto sobre el archivo de modal de botstrap
 const modalPelicula = new bootstrap.Modal(
   document.getElementById("modalAgregar")
 );
 
+//carga de datos en la pagina de administrador
+function cargaInicial(){
+  // si no hay datos cargados no mostrara nada en la tabla
+  if(listaPeliculas.length>0){
+    //dibujes los datos en la tabla 
+    
+    listaPeliculas.map((peli,contador)=> dibujarFilas(peli,contador))
+
+  }
+}
+
+function dibujarFilas(peli,contador){
+  let datosTabla = document.getElementById('tBodyTabla');
+  //aqui se dubuja la tabla
+ datosTabla.innerHTML+=` 
+ <tr>
+ <th scope="row">${contador+1}</th>
+ <td>${peli.titulo}</td>
+ <td class="text-truncate">
+   ${peli.descripcion}
+ </td>
+ <td class="text-truncate">
+  ${peli.imagen}
+ </td>
+ <td> ${peli.genero}</td>
+ <td>
+   <button class="bi bi-pencil-square btn btn-warning m-2"  id="btnEditar"></button>
+   <button class="bi bi-x-square btn btn-danger m-2"></button>
+ </td>
+</tr>`
+}
 function crearPeli() {}
 function mostrarModalPelicula() {
   //modalPelicula nos sirve para crear un intancia de un modal desde JS
@@ -86,6 +119,9 @@ function cargarPelicula(e) {
     limpiarForm();
     //cerrar formulario
     modalPelicula.hide();
+    //cargamos la ultima fila en la tabla
+    let contadorPeliculas = listaPeliculas.length-1;
+    dibujarFilas(nuevaPeli,contadorPeliculas);
   } else {
     msjFormulario.className = "alert alert-danger mt-3 ";
     msjFormulario.innerHTML = sumario;
