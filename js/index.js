@@ -37,8 +37,7 @@ function dibujarFilas(peli) {
   let datosCard = document.getElementById("cardIndex");
   //aqui se dubuja la tabla
 
-  datosCard.innerHTML += ` 
- 
+  datosCard.innerHTML += `
   <article class="col-md-4 col-lg-3 mb-3">
             <div class="card h-100">
                 <img src="${peli.imagen}" class="card-img-top" alt="${peli.titulo}">
