@@ -28,9 +28,7 @@ btnAgregar.addEventListener("click", mostrarModalPelicula);
 formPelicula.addEventListener("submit", cargarPelicula);
 
 //desde la linea 30 ala 42 transformamos el objeto que esta almacenado en el localStorage a tipo pelicula ya que al guardarse pierde las propiedas de la clase Pelicula
-for (let index = 0; index < listaPeliculas.length; index++) {
-  
-}
+
 if (listaPeliculas) {
   // si el local storage esta vacio devolvemos un array vacio.
   
@@ -87,11 +85,6 @@ function cargaCaracteresTextArea() {
   contadorDescripcion.innerHTML =resta;
   
 }
-/*txtDescripcion.className=`onkeyup="mostrarTextDescripcion()"`
-
-function mostrarTextDescripcion(){
-  console.log()
-}*/
 //-------------------------------------------------------------------
 
 
@@ -157,4 +150,12 @@ function guardarLocalStorage() {
 }
 function limpiarForm() {
   formPelicula.reset();
+}
+
+//----------------Delete -------------------
+// para borrar datos en un archivo que este de tipo modulo
+// se debe crear el archivo atravez de js
+//oh se puede llamar al objeto windows para eliminar 
+window.eliminarPelicula = ()=>{
+console.log('aqui se borro una pelicula');
 }

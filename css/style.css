@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+
 }
 body{
     min-height: 100vh;
@@ -18,6 +19,9 @@ table {
     Word-wrap: break-Word
     
 }
+
+
+
 /*
 table ,tr,th,td{
     border: 1px solid black;
