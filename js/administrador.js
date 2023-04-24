@@ -2,6 +2,7 @@
 import Pelicula from "./classPelicula.js";
 //se agrega la llaves ya que no lleva el export default
 
+//inpotyo el sumar validacion funcion del archivo helpers.js
 import { sumarValidaciones } from "./helpers.js";
 
 const btnEditar = document.getElementById("btnEditar");
@@ -19,8 +20,23 @@ const duracion = document.getElementById("inputDuracion");
 const reparto = document.getElementById("inputReparto");
 const msjFormulario = document.getElementById("msjFormulario");
 //trabajar las peliculas para que vuelvan a ser un objeto Pelicula.
-let listaPeliculas = JSON.parse(localStorage.getItem("listaPeliculas")) || [];
-console.log("lista pelicula: " + listaPeliculas);
+let listaPeliculas = JSON.parse(localStorage.getItem('listaPeliculas'))|| [];
+
+
+for (let index = 0; index < listaPeliculas.length; index++) {
+  
+}
+if (listaPeliculas) {
+  // si el local storage esta vacio devolvemos un array vacio.
+  
+  listaPeliculas = listaPeliculas.map((peli)=>  { return (
+    new Pelicula(peli.titulo,peli.descripcion,peli.imagen,peli.genero,peli.anio,peli.duracion,peli.pais,peli.reparto)
+    )
+  }
+  );
+}
+
+console.log(listaPeliculas);
 
 btnEditar.addEventListener("click", crearPeli);
 btnAgregar.addEventListener("click", mostrarModalPelicula);

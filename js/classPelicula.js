@@ -27,7 +27,7 @@
 getCodigo(){
     return this.#codigo;
   }
-  setCodigo(codigo) {
+setCodigo(codigo) {
     this.#codigo = codigo;
   }
 
